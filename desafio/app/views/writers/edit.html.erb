@@ -1,0 +1,13 @@
+<h1 class='title'>Editar</h1>
+<%= form_for @writer do |f| %>
+  <span>Nome</span>
+  <%= f.text_field :name%>
+  <span>Ano de nascimento</span>
+  <%= f.number_field :birth_year%>
+  <span>País</span>
+  <%= f.text_field :country%>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to  "Voltar", writers_path() %>

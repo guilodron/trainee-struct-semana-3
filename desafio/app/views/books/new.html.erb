@@ -1,0 +1,14 @@
+<h1 class='title'>Novo livro: </h1>
+
+<%= form_for @book do |f| %>
+  <span>Nome</span>
+  <%= f.text_field :name%>
+  <span>Ano</span>
+  <%= f.number_field :year%>
+  <span>Escritor</span>
+  <%= f.select :writer_id, @writers.collect {|writer| [writer.name, writer.id]}%>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to  "Voltar", books_path() %>
+

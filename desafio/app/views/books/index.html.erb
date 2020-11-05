@@ -1,0 +1,15 @@
+<h1 class='title' >Todos os livros</h1>
+
+<% @books.each do |book| %>
+  <div class='cell'>
+    <span><%= book.name %></span>
+    <%= link_to  "Mais", book_path(book.id) %>
+    <%= link_to  "Editar", edit_book_path(book.id) %>
+    <%= button_to  "Deletar", book_path(book.id), method: :delete %>
+  </div>
+<% end %>
+
+<%= link_to  "Criar", new_book_path() %>
+<%= link_to  "Voltar", root_path() %>
+
+<p><%= flash[:notice] %></p>

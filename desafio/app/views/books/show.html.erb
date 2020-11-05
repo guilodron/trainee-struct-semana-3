@@ -1,0 +1,10 @@
+<h1 class='title'>Show</h1>
+
+<strong>Nome</strong>
+<%= @book.name %>
+<strong>Ano</strong>
+<%= @book.year %>
+<strong>Escritor</strong>
+<%= @book.writer.name %>
+
+<%= link_to  "Voltar", books_path() %>

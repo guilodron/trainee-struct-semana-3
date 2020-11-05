@@ -1,0 +1,15 @@
+<h1 class='title'>Todos os escritores</h1>
+
+<% @writers.each do |writer| %>
+  <div class='cell'>
+    <span><%= writer.name %></span>
+    <%= link_to  "Mais", writer_path(writer.id) %>
+    <%= link_to  "Editar", edit_writer_path(writer.id) %>
+    <%= button_to  "Deletar", writer_path(writer.id), method: :delete %>
+  </div>
+<% end %>
+
+<%= link_to  "Criar", new_writer_path() %>
+<%= link_to  "Voltar", root_path() %>
+
+<p><%= flash[:notice] %></p>
